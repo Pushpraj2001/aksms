@@ -2,10 +2,7 @@
 include('inc/header.php');
 if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '1'{
 
-  header('location:login.php')}
-
-
-
+header('location:login.php')}
 
 
 ?>
