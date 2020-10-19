@@ -1,5 +1,5 @@
 <?php
-$studentname = $_POST['studentname']
+$studentname = $_POST['studentname'];
 $fathername = $_POST['fathername'];
 $dob = $_POST['dob'];
 $gender = $_POST['gender'];
@@ -47,38 +47,37 @@ $ifsccode = $_POST['ifsccode'];
 $remarks = $_POST['remarks'];
 $phone = $_POST['phone'];
 if (!empty($studentname) || !empty($fathername) || !empty($dob) || !empty($gender) || !empty($martial) || !empty($bloodgroup) || !empty($adharcard) || !empty($category) || !empty($studentphoto) || !empty($email) || !empty($password) || !empty($village) || !empty($block) || !empty($country) || !empty($state) || !empty($city) || !empty($pincode) || !empty($cvillage) || !empty($cblock) || !empty($ccountry) || !empty($cstate) || !empty($ccity) || !empty($cpincode) || !empty($throllno) || !empty($thboard) || !empty($ndboard) || !empty($ndrollno) || !empty($ndrollcode) || !empty($guni) || !empty($gstream) || !empty($gyear) || !empty($regno) || !empty($regdate) || !empty($payment) || !empty($paymetndat) || !empty($drccdate) || !empty($batchsdate) || !empty($batchcode) || !empty($batchname) || !empty($batchtime1) || !empty($batchtime2) || !empty($acname) || !empty($acnumber) || !empty($ifsccode) || !empty($remarks) || !empty($phoneCode) || !empty($phone)) {
- $host = "localhost";
+    $host = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
     $dbname = "youtube";
     //create connection
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
     if (mysqli_connect_error()) {
-     die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
+        die('Connect Error(' . mysqli_connect_errno() . ')' . mysqli_connect_error());
     } else {
-     $SELECT = "SELECT email From register Where email = ? Limit 1";
-     $INSERT = "INSERT Into register (studentname, fathername, dob, gender, martial, bloodgroup, adharcard, category, studentphoto, email, password, village, block, country, state, city, cvillage, cblock, ccountry, cstate, ccity, cpincode, 10throllno, 10thboard, 10throllcode, 12thboard, 12throllnumber, 12throllcode, guni, gstream, gyear, regno, regdate, payment, paymetndat, drccdate, batchsdate, batchcode, batchname, batchtime1, batchtime2, acname, acnumber, ifsccode, remarks, phoneCode,  phone) values(?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-     //Prepare statement
-     $stmt = $conn->prepare($SELECT);
-     $stmt->bind_param("s", $email);
-     $stmt->execute();
-     $stmt->bind_result($email);
-     $stmt->store_result();
-     $rnum = $stmt->num_rows;
-     if ($rnum==0) {
-      $stmt->close();
-      $stmt = $conn->prepare($INSERT);
-      $stmt->bind_param("ssssii", $studentname, $fathername, $dob, $gender, $martial,  $bloodgroup,  $adharcard,  $category,  $studentphoto,  $email,  $password,  $village,  $block,  $country,  $state,  $city,  $pincode,  $cvillage,  $cblock,  $ccountry,  $cstate,  $ccity,  $cpincode,  $throllno,  $thboard,  $thboard,  $ndboard,  $ndrollno,  $ndrollcode,  $guni,  $gstream,  $gyear,  $regno,  $regdate,  $payment,  $paymetndat,  $drccdate,  $batchsdate,  $batchcode,  $batchname,  $batchtime1,  $batchtime2,  $acname,  $acnumber,  $ifsccode,  $remarks, $phone);
-      $stmt->execute();
-      echo "New record inserted sucessfully";
-     } else {
-      echo "Someone already register using this email";
-     }
-     $stmt->close();
-     $conn->close();
+        $SELECT = "SELECT email From register Where email = ? Limit 1";
+        $INSERT = "INSERT Into register (studentname, fathername, dob, gender, martial, bloodgroup, adharcard, category, studentphoto, email, password, village, block, country, state, city, cvillage, cblock, ccountry, cstate, ccity, cpincode, 10throllno, 10thboard, 10throllcode, 12thboard, 12throllnumber, 12throllcode, guni, gstream, gyear, regno, regdate, payment, paymetndat, drccdate, batchsdate, batchcode, batchname, batchtime1, batchtime2, acname, acnumber, ifsccode, remarks, phoneCode,  phone) values(?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        //Prepare statement
+        $stmt = $conn->prepare($SELECT);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->bind_result($email);
+        $stmt->store_result();
+        $rnum = $stmt->num_rows;
+        if ($rnum == 0) {
+            $stmt->close();
+            $stmt = $conn->prepare($INSERT);
+            $stmt->bind_param("ssssii", $studentname, $fathername, $dob, $gender, $martial,  $bloodgroup,  $adharcard,  $category,  $studentphoto,  $email,  $password,  $village,  $block,  $country,  $state,  $city,  $pincode,  $cvillage,  $cblock,  $ccountry,  $cstate,  $ccity,  $cpincode,  $throllno,  $thboard,  $thboard,  $ndboard,  $ndrollno,  $ndrollcode,  $guni,  $gstream,  $gyear,  $regno,  $regdate,  $payment,  $paymetndat,  $drccdate,  $batchsdate,  $batchcode,  $batchname,  $batchtime1,  $batchtime2,  $acname,  $acnumber,  $ifsccode,  $remarks, $phone);
+            $stmt->execute();
+            echo "New record inserted sucessfully";
+        } else {
+            echo "Someone already register using this email";
+        }
+        $stmt->close();
+        $conn->close();
     }
 } else {
- echo "All field are required";
- die();
+    echo "All field are required";
+    die();
 }
-?>
