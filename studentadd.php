@@ -2,7 +2,7 @@
 include('inc/header.php');
 if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '1'{
 
-header('location:login.php')}
+  header('location:login.php')}
 
 
 ?>
@@ -32,10 +32,18 @@ header('location:login.php')}
             </div>
             <!-- father name -->
             <div class="col-md-6 mb-3">
+              <label for="fathername">Mother Name</label>
+              <input name="mothername" type="text" class="form-control" id="mothername" placeholder="Mother Name" value="" required>
+              <div class="invalid-feedback">
+                Valid Mother name is required.
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
               <label for="fathername">Father Name</label>
               <input name="fathername" type="text" class="form-control" id="fathername" placeholder="Father Name" value="" required>
               <div class="invalid-feedback">
-                Valid last name is required.
+                Valid Father name is required.
               </div>
             </div>
           </div>
@@ -52,13 +60,13 @@ header('location:login.php')}
             <!-- Gender -->
             <div class="col-md-6 mb-3">
               <label for="gender">Gender</label>
-              <br>
-              <input type="radio" id="male" name="gender" value="male">
-              <label for="male">Male</label><br>
-              <input type="radio" id="female" name="gender" value="female">
-              <label for="female">Female</label><br>
-              <input type="radio" id="other" name="gender" value="other">
-              <label for="other">Other</label>
+
+              <select name="gender" id="cars">
+                <option name="gender" value="Genral">Genral</option>
+                <option name="gender" value="saab">Saab</option>
+                <option name="gender" value="opel">Opel</option>
+                <option name="gender" value="audi">Audi</option>
+              </select>
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -110,7 +118,7 @@ header('location:login.php')}
             <input type="file" name="studentphoto" class="custom-file-input" id="studentphoto" required>
             <label class="custom-file-label" for="stuentphoto">Choose file...</label>
           </div>
-          <!-- education details -->
+
 
 
           <!-- email or username  -->
@@ -146,7 +154,7 @@ header('location:login.php')}
 
           <div class="mb-3">
             <label for="block" required>Block </span></label>
-            <input type="text" class="form-control" id="block" placeholder="Block">
+            <input type="text" name="block" class="form-control" id="block" placeholder="Block">
           </div>
 
           <div class="row">
@@ -222,11 +230,11 @@ header('location:login.php')}
       <div id="dvPassport" style="display: none">
         <div class="mb-3">
           <!-- current address -->
-          <!-- village -->
+
           <!-- village  -->
           <div class="mb-3">
             <label for="village">Village</label>
-            <input name="caddress" type="text" class="form-control" id="caddress" placeholder="Village Name" required>
+            <input name="cvillage" type="text" class="form-control" id="caddress" placeholder="Village Name">
             <div class="invalid-feedback">
               Please enter your Village.
             </div>
@@ -235,7 +243,7 @@ header('location:login.php')}
 
           <div class="mb-3">
             <label for="cblock" required>Block </span></label>
-            <input name="block" type="text" class="form-control" id="cblock" placeholder="Block">
+            <input name="cblock" type="text" class="form-control" id="cblock" placeholder="Block">
           </div>
 
           <div class="row">
@@ -243,7 +251,7 @@ header('location:login.php')}
             <div class="form-group">
               <div class="col-sm-12">
                 <!-- country -->
-                <select name="ccountry" class="form-control countries" id="countryId" required="required">
+                <select name="ccountry" class="form-control countries" id="countryId">
                   <option value="">Select Country</option>
                 </select>
               </div>
@@ -251,14 +259,14 @@ header('location:login.php')}
             <div class="form-group">
               <div class="col-sm-12">
                 <!-- state -->
-                <select name="cstate" class="form-control states" id="stateId" required="required">
+                <select name="cstate" class="form-control states" id="state">
                   <option value="">Select State</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
 
-              <select name="ccity" class="form-control cities" id="cityId" required="required">
+              <select name="ccity" class="form-control cities" id="cityId">
                 <!-- city -->
                 <option value=" ">Select City</option>
               </select>
@@ -273,7 +281,7 @@ header('location:login.php')}
         <!-- pincode -->
         <div class="col-md-3 mb-3">
           <label for="pincode">Pincode</label>
-          <input name="pincode" type="number" class="form-control" id="pincode" placeholder="Pincode" required>
+          <input name="cpincode" type="number" class="form-control" id="pincode" placeholder="Pincode">
           <div class="invalid-feedback">
             Pincode required.
           </div>
@@ -289,18 +297,12 @@ header('location:login.php')}
         </span>
 
 
-        <input type="text" class="col-md-3 mr-3 ml-2 mb-5 " name="10thboard" id="10thboard" placeholder="10th Board" required>
-        <div class="invalid-feedback">
-          required.
-        </div>
-        <input type="text" class="col-md-3 mr-3  ml-2 mb-5  " name="10throllno" id="10throllno" placeholder="10th Roll No" required>
-        <div class="invalid-feedback">
-          required.
-        </div>
-        <input type="text" class="col-md-3 mr-3  mb-2 mb-5 " name="10throllcode" id="10throllcode" placeholder="10th Roll Code" required>
-        <div class="invalid-feedback">
-          required.
-        </div>
+        <input type="text" class="col-md-3 mr-3 ml-2 mb-5 " name="10thboard" id="10thboard" placeholder="10th Board">
+
+        <input type="text" class="col-md-3 mr-3  ml-2 mb-5  " name="10throllno" id="10throllno" placeholder="10th Roll No">
+
+        <input type="text" class="col-md-3 mr-3  mb-2 mb-5 " name="10throllcode" id="10throllcode" placeholder="10th Roll Code">
+
         <!-- INTERMIDATE details -->
         <hr>
         <span>
@@ -321,7 +323,7 @@ header('location:login.php')}
         <input type="text" name="guni" class="col-md-4 mr-3 mb-5 ml-2 " id="graduationboard" placeholder="Graduation University">
         <input type="text" name="gstream" class="col-md-4 mr-3 mb-5 ml-2 " id="graduationstream" placeholder="Graduation Stream">
 
-        <input type="text" name="grollno" class="col-md-4 mr-3 mb-5 ml-2" id="graduationrollno" placeholder="Graduation Roll No">
+        <input type="text" name="gyear" class="col-md-4 mr-3 mb-5 ml-2" id="graduationYear" placeholder="Graduation Year">
 
 
         <!-- for office use details -->
@@ -398,7 +400,7 @@ header('location:login.php')}
     </div>
     <div class="col-md-3 mb-3">
       <div class="custom-file">
-        <label for="ifsc">Signature</label>
+        <label for="Signature">Signature</label>
         <input type="file" class="custom-file-input" id="signature" name="signature" placeholer="Signature" required>
         <div class="invalid-feedback">
           Signature is required
