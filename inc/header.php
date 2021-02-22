@@ -18,6 +18,10 @@ if(!isset($_SESSION['IS_LOGIN'])){
       <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
       <!-- Custom styles for this template-->
       <link href="css/sb-admin.css" rel="stylesheet">
+    
+      <link href="./css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+      <link href="./css/button.dataTables.min.js" rel="stylesheet" type="text/css">
+
    </head>
    <body id="page-top">
       <nav class="navbar navbar-expand navbar-dark bg-dark static-top">

@@ -31,7 +31,7 @@ mysqli_close($con);
 	  </div>
 	  <div class="card-body">
 		 <div class="table-responsive">
-			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+			<table class="display nowrap" id="example"  width="100%" cellspacing="0">
 			<a class="btn btn-success" href="addbatch.php" role="button">Add New Batch</a>
 			   <thead>
 				  <tr>
@@ -75,3 +75,22 @@ mysqli_close($con);
    </div>
 </div>
 <?php include('inc/footer.php')?>
+<script src="script/buttons.flash.min.js" type="text/javascript"></script>
+			<script src="script/buttons.html5.min.js" type="text/javascript"></script>
+			<script src="script/buttons.print.min.js" type="text/javascript"></script>
+			<script src="script/dataTables.buttons.min.js" type="text/javascript"></script>
+			<script src="script/jquery-3.5.1.js" type="text/javascript"></script>
+			<script src="script/jquery.dataTables.min.js" type="text/javascript"></script>
+			<script src="script/pdfmake.min.js" type="text/javascript"></script>
+			<script src="script/jszip.min.js" type="text/javascript"></script>
+			<script src="script/vfs_fonts.js" type="text/javascript"></script>
+			<script type="text/javascript" >
+				   $(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+				   </script>

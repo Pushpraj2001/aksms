@@ -23,8 +23,13 @@ if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '
         <form class="needs-validation" method="post" action="database/stdadd.php">
           <div class="row">
             <!-- name -->
+            <hr>
+<center>
+<h3> Personal Details</h3></center>
+<hr>
             <div class="col-md-6 mb-3">
-              <label for="student Name">Name</label>
+              <hr>
+              <label for="student Name">Name on Certificate</label>
               <input name="studentname" type="text" class="form-control" id="studentname" placeholder="Student Name " value="" required>
               <div class="invalid-feedback">
                 Valid first name is required.
@@ -119,8 +124,9 @@ if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '
             <label class="custom-file-label" for="stuentphoto">Choose file...</label>
           </div>
 
-
-
+<hr>
+<center>
+<h1> Login Details</center>
           <!-- email or username  -->
 
           <div class="mb-3">
@@ -129,8 +135,9 @@ if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '
             <div class="invalid-feedback">
               Please enter a valid email address for shipping updates.
             </div>
+             </div>
             <!-- password  -->
-          </div>
+         
           <div class="mb-3">
             <label for="password">Password</label>
             <div class="input-group">
@@ -141,6 +148,10 @@ if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '
               </div>
             </div>
           </div>
+          <hr>
+<center>
+<h3> Address Details</h3></center>
+<hr>
           <!-- parmanent address  -->
           <!-- village  -->
           <div class="mb-3">
@@ -289,6 +300,10 @@ if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '
 
       </div>
       <!-- education details  -->
+      <hr>
+<center>
+<h3> Education Details</h3></center>
+<hr>
       <div class="row">
         <span>
           <!-- matric details -->
@@ -324,34 +339,8 @@ if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '
         <input type="text" name="gstream" class="col-md-4 mr-3 mb-5 ml-2 " id="graduationstream" placeholder="Graduation Stream">
 
         <input type="text" name="gyear" class="col-md-4 mr-3 mb-5 ml-2" id="graduationYear" placeholder="Graduation Year">
-
-
-        <!-- for office use details -->
-        <hr>
-        <span>
-          <h4 class="mb-2 ml-2">For Office Use :- </h4>
-        </span>
-
-
-        <input type="text" name="regno" class="col-md-3 mr-3 mb-5 ml-2  " id="regno" placeholder="Reg No">
-
-        <input type="text" name="regdate" class="col-md-3 mr-3 mb-5 ml-2" id="regdate" placeholder="Reg Date">
-
-        <input type="text" name="payment" class="col-md-3 mr-3 mb-5 ml-2" id="payment" placeholder="Payment">
-        <input type="text" name="paymentdat" class="col-md-3 mr-3 mb-5 ml-2" id="paymentdate" placeholder="Payment Date">
-        <input type="text" name="drccdate" class="col-md-3 mr-3 mb-5 ml-2" id="drccdate" placeholder="DRCC Verifaction Date">
-        <input type="text" name="batchsdate" class="col-md-3 mr-3 mb-5 ml-2" id="batchstartdate" placeholder="Batch Start Date">
-        <input type="text" name="batchcode" class="col-md-3 mr-3 mb-5 ml-2" id="batchcode" placeholder="batchcode">
-        <input type="text" name="batchname" class="col-md-3 mr-3 mb-5 ml-2" id="batchname" placeholder="Batch Name">
-        <input type="text" name="batchtime1" class="col-md-3 mr-3 mb-5 ml-2" id="batchtime1" placeholder="Batch Time 1st">
-        <input type="text" name="batchtime2" class="col-md-3 mr-3 mb-5 ml-2" id="batchtime2" placeholder="Batch Time 2nd">
-
-
-
-        <hr>
-
-
       </div>
+      
     </div>
 
 
@@ -382,7 +371,7 @@ if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 mb-3">
+    <div class="col-md-12 mb-3">
       <label for="ifsc">IFSC Code</label>
       <input type="text" class="form-control" name="ifsccode" id="ifsccode" placeholder="IFSC CODE" required>
       <div class="invalid-feedback">
@@ -390,7 +379,30 @@ if (isset($_SESSION['ROLE']) + $_SESSION['ROLE'] != '2') +$_SESSION['ROLE'] != '
       </div>
     </div>
     <hr>
+ <!-- for office use details -->
+ <br>
+ <hr>
+  
+          <h4 >For Office Use :- </h4>
+       <hr>
 
+
+        <input type="text" name="regno" class="col-md-3 mr-3 mb-5 ml-2  " id="regno" placeholder="Reg No">
+
+        <input type="text" name="regdate" class="col-md-3 mr-3 mb-5 ml-2" id="regdate" placeholder="Reg Date">
+
+        <input type="text" name="payment" class="col-md-3 mr-3 mb-5 ml-2" id="payment" placeholder="Payment">
+        <input type="text" name="paymentdat" class="col-md-3 mr-3 mb-5 ml-2" id="paymentdate" placeholder="Payment Date">
+        <input type="text" name="drccdate" class="col-md-3 mr-3 mb-5 ml-2" id="drccdate" placeholder="DRCC Verifaction Date">
+        <input type="text" name="batchsdate" class="col-md-3 mr-3 mb-5 ml-2" id="batchstartdate" placeholder="Batch Start Date">
+        <input type="text" name="batchcode" class="col-md-3 mr-3 mb-5 ml-2" id="batchcode" placeholder="batchcode">
+        <input type="text" name="batchname" class="col-md-3 mr-3 mb-5 ml-2" id="batchname" placeholder="Batch Name">
+        <input type="text" name="batchtime1" class="col-md-3 mr-3 mb-5 ml-2" id="batchtime1" placeholder="Batch Time 1st">
+        <input type="text" name="batchtime2" class="col-md-3 mr-3 mb-5 ml-2" id="batchtime2" placeholder="Batch Time 2nd">
+
+
+
+   
     <div class="col-md-3 mb-3">
       <label for="remarks">Remarks</label>
       <input type="text" class="form-control" id="remarks" name="remarks" placeholder="Remarks" required>
